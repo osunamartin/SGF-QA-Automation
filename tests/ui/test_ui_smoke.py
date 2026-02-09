@@ -21,3 +21,5 @@ def test_ui_smoke(page):
     page.get_by_role("textbox", name="Escanee código o escriba...").press("Escape")
     page.get_by_role("textbox", name="Escanee código o escriba...").press("F2")
     page.get_by_role("button").filter(has_text=re.compile(r"^$")).click()
+
+
