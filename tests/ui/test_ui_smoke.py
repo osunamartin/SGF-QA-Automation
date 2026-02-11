@@ -23,3 +23,17 @@ def test_ui_smoke(page):
     page.get_by_role("button").filter(has_text=re.compile(r"^$")).click()
 
 
+def test_venta(page):
+
+    page.goto("http://localhost:3000/")
+    #Assertion con expect
+    expect(page.get_by_role("textbox", name="Escanee código o escriba...")).to_be_visible()
+    page.get_by_role("textbox", name="Escanee código o escriba...").click()
+    page.get_by_role("textbox", name="Escanee código o escriba...").fill("dia")
+    page.get_by_text("7793334445556Metformina 850mg").click() #Con un fixture nos ahorrariamos un error si cambia/se borra este item de la db.
+    page.locator(".lucide.lucide-pen-line").click()
+    page.get_by_role("spinbutton").nth(1).click()
+    page.get_by_role("spinbutton").nth(1).fill("4")
+    page.get_by_role("button", name="Guardar").click()
+    page.get_by_role("button", name="COBRAR (F12)").click()
+
