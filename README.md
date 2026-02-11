@@ -26,32 +26,6 @@ mysql-connector-python
 
 (Opcional) requests para API testing
 
-📁 Estructura del proyecto
-SGF-QA-Automation/
-│
-├─ tests/
-│   ├─ ui/
-│   │   ├─ test_ui_smoke.py
-│   │   └─ test_ui_checkout.py
-│   │
-│   ├─ api/
-│   │   └─ test_api_health.py
-│   │
-│   ├─ db/
-│   │   └─ test_db_products.py
-│   │
-│   └─ e2e/
-│       └─ test_e2e_db_to_ui.py
-│
-├─ utils/
-│   ├─ db.py
-│   └─ config.py
-│
-├─ conftest.py
-├─ requirements.txt
-├─ pytest.ini
-└─ .env
-
 ⚙️ Requisitos previos
 
 Tener levantado el sistema Gestión Farmacias:
@@ -162,3 +136,4 @@ No hay login
 El sistema depende fuertemente de datos precargados
 
 Por eso los tests E2E se apoyan en DB.
+
