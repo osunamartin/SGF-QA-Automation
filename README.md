@@ -12,6 +12,10 @@ Este repositorio contiene pruebas automatizadas para el sistema Gestión Farmaci
 
 El objetivo es validar el funcionamiento del sistema de forma reproducible y escalable.
 
+## 📝 Documentación de Pruebas Manuales
+
+[Sistema Gestión Farmacias - Testing Manual](https://docs.google.com/spreadsheets/d/1gVgSQkQUnCyBSVGTIMV64B14QOo20DI5atE8N8INsO8/edit?gid=359185771#gid=359185771)
+
 ## 🧰 Tecnologías
 
 Python 3.11+
@@ -119,5 +123,6 @@ No hay login
 El sistema depende fuertemente de datos precargados
 
 Los tests E2E se apoyan en base de datos debido a esto.
+
 
 
