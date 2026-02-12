@@ -1,4 +1,4 @@
-🎯 Objetivo
+## 🎯 Objetivo
 
 Este repositorio contiene pruebas automatizadas para el sistema Gestión Farmacias, incluyendo:
 
@@ -12,7 +12,7 @@ Este repositorio contiene pruebas automatizadas para el sistema Gestión Farmaci
 
 El objetivo es validar el funcionamiento del sistema de forma reproducible y escalable.
 
-🧰 Tecnologías
+## 🧰 Tecnologías
 
 Python 3.11+
 
@@ -24,11 +24,11 @@ python-dotenv
 
 mysql-connector-python
 
-(Opcional) requests para API testing
+Requests para API testing (opcional para esta función)
 
-⚙️ Requisitos previos
+## ⚙️ Requisitos previos
 
-Tener levantado el sistema Gestión Farmacias:
+Tener levantado el [Sistema Gestión Farmacias](https://github.com/nnvelez95/Gestion-Farmacias):
 
 Frontend: http://localhost:3000
 
@@ -36,7 +36,7 @@ Backend/API: http://localhost:3001 (si aplica)
 
 Base de datos MySQL funcionando
 
-🐍 Setup del entorno (Windows)
+## 🐍 Setup del entorno (Windows)
 1) Crear y activar el venv
 python -m venv venv
 .\venv\Scripts\activate
@@ -44,10 +44,10 @@ python -m venv venv
 2) Instalar dependencias
 pip install -r requirements.txt
 
-3) Instalar navegadores de Playwright
+3) Instalar navegadores de Playwright 
 python -m playwright install
 
-🔐 Configuración .env
+## 🔐 Configuración .env
 
 Crear un archivo .env en la raíz del proyecto:
 
@@ -59,7 +59,7 @@ DB_PASS=TU_PASSWORD
 DB_NAME=farmacia_db
 DB_PORT=3306
 
-▶️ Ejecutar tests
+## ▶️ Ejecutar tests
 Correr todo:
 pytest -v
 
@@ -72,50 +72,33 @@ pytest -v tests/db
 Correr solo E2E:
 pytest -v tests/e2e
 
-🧪 Cómo funciona la estrategia de datos (DB Fixture)
+## 🧪 Cómo funciona la estrategia de datos (DB Fixture)
 
-El proyecto usa un fixture en conftest.py llamado test_product.
-
-¿Qué hace?
-
-Inserta un producto real en la tabla productos
-
-Devuelve un diccionario con los datos creados
+El proyecto usa un fixture en conftest.py llamado test_product, el cual inserta un producto real en la tabla productos y devuelve un diccionario con los datos creados.
 
 Al finalizar el test, borra ese producto
 
 Esto permite:
 
-✅ crear datos de prueba limpios
-✅ evitar contaminación de base
-✅ ejecutar tests repetibles
+✅ Crear datos de prueba limpios
+✅ Evitar contaminación de base
+✅ Ejecutar tests repetibles aún cuando la base de datos no contenga productos
 
-🧠 ¿Qué es conftest.py?
+## 🧩 Fixtures importantes
 
-Archivo especial de pytest.
-
-Sirve para definir:
-
-fixtures globales
-
-setup/teardown automático
-
-configuraciones compartidas
-
-🧩 Fixtures importantes
-db_connection
+### db_connection:
 
 Conecta una sola vez a la DB durante toda la sesión.
 
-test_product
+### test_product
 
 Crea 1 producto único por test y lo elimina al finalizar.
 
-page
+### page
 
 Crea una instancia de Playwright lista para usar.
 
-🧼 Buenas prácticas usadas
+## 🧼 Buenas prácticas usadas
 
 Datos de prueba únicos (uuid)
 
@@ -125,7 +108,7 @@ Tests independientes
 
 Separación por capas: UI / API / DB / E2E
 
-🚧 Limitaciones actuales del sistema (del proyecto original)
+## 🚧 Limitaciones actuales del sistema (del proyecto original)
 
 No hay CRUD UI completo
 
@@ -135,5 +118,6 @@ No hay login
 
 El sistema depende fuertemente de datos precargados
 
-Por eso los tests E2E se apoyan en DB.
+Los tests E2E se apoyan en base de datos debido a esto.
+
 
