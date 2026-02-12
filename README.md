@@ -1,6 +1,6 @@
 ## 🎯 Objetivo
 
-Este repositorio contiene pruebas automatizadas para el sistema Gestión Farmacias, incluyendo:
+Este repositorio contiene pruebas automatizadas para el [Sistema Gestión Farmacias](https://github.com/nnvelez95/Gestion-Farmacias), incluyendo:
 
 ✅ UI Testing (Playwright)
 
@@ -123,6 +123,7 @@ No hay login
 El sistema depende fuertemente de datos precargados
 
 Los tests E2E se apoyan en base de datos debido a esto.
+
 
 
 
