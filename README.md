@@ -28,7 +28,7 @@ python-dotenv
 
 mysql-connector-python
 
-Requests para API testing (opcional para esta función)
+Requests para API testing 
 
 ## ⚙️ Requisitos previos
 
@@ -123,6 +123,7 @@ No hay login
 El sistema depende fuertemente de datos precargados
 
 Los tests E2E se apoyan en base de datos debido a esto.
+
 
 
 
