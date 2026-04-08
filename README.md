@@ -1,3 +1,135 @@
+ENG
+
+🎯 Objective
+
+This repository contains automated tests for the Pharmacy Management System
+, including:
+
+✅ UI Testing (Playwright)
+
+✅ API Testing (requests)
+
+✅ DB Testing (MySQL)
+
+✅ E2E Tests (DB → UI)
+
+The goal is to validate the system’s behavior in a reproducible and scalable way.
+
+📝 Manual Testing Documentation
+
+Pharmacy Management System - Manual Testing
+
+🧰 Technologies
+
+Python 3.11+
+
+Pytest
+
+Playwright (Python)
+
+python-dotenv
+
+mysql-connector-python
+
+Requests for API testing
+
+⚙️ Prerequisites
+
+Have the Pharmacy Management System
+ up and running:
+
+Frontend: http://localhost:3000
+
+Backend/API: http://localhost:3001
+ (if applicable)
+
+MySQL database running
+
+🐍 Environment setup (Windows)
+Create and activate the venv
+python -m venv venv
+.\venv\Scripts\activate
+Install dependencies
+pip install -r requirements.txt
+Install Playwright browsers
+python -m playwright install
+🔐 .env Configuration
+
+Create a .env file in the project root:
+
+BASE_URL=http://localhost:3000
+
+DB_HOST=127.0.0.1
+DB_USER=root
+DB_PASS=YOUR_PASSWORD
+DB_NAME=farmacia_db
+DB_PORT=3306
+
+▶️ Run tests
+
+Run all:
+pytest -v
+
+Run only UI:
+pytest -v tests/ui
+
+Run only DB:
+pytest -v tests/db
+
+Run only E2E:
+pytest -v tests/e2e
+
+🧪 How the data strategy works (DB Fixture)
+
+The project uses a fixture in conftest.py called test_product, which inserts a real product into the productos table and returns a dictionary with the created data.
+
+At the end of the test, it deletes that product.
+
+This allows:
+
+✅ Creating clean test data
+✅ Avoiding database contamination
+✅ Running repeatable tests even when the database has no products
+
+🧩 Important fixtures
+db_connection:
+
+Connects to the DB once per session.
+
+test_product
+
+Creates 1 unique product per test and deletes it at the end.
+
+page
+
+Creates a ready-to-use Playwright instance.
+
+🧼 Best practices used
+
+Unique test data (uuid)
+
+Automatic cleanup (yield)
+
+Independent tests
+
+Layer separation: UI / API / DB / E2E
+
+🚧 Current system limitations (from the original project)
+
+No complete UI CRUD
+
+No CSV upload from UI
+
+No login
+
+The system heavily depends on preloaded data
+
+E2E tests rely on the database because of this
+
+----
+
+ESP
+
 ## 🎯 Objetivo
 
 Este repositorio contiene pruebas automatizadas para el [Sistema Gestión Farmacias](https://github.com/nnvelez95/Gestion-Farmacias), incluyendo:
